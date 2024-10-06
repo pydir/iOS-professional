@@ -12,6 +12,7 @@
 		931A22752CB16D910060C88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931A226E2CB16D910060C88D /* LaunchScreen.storyboard */; };
 		931A227E2CB2EDD90060C88D /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A227D2CB2EDD90060C88D /* OnboardingContainerViewController.swift */; };
 		931A22802CB30A990060C88D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A227F2CB30A990060C88D /* OnboardingViewController.swift */; };
+		931A22892CB32E3C0060C88D /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A22882CB32E3C0060C88D /* LocalState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +23,18 @@
 		931A226D2CB16D910060C88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		931A227D2CB2EDD90060C88D /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		931A227F2CB30A990060C88D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		931A22882CB32E3C0060C88D /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		931A22772CB16E190060C88D /* Login */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Login;
+			sourceTree = "<group>";
+		};
+		931A22862CB327370060C88D /* Home */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,6 +69,8 @@
 		931A22702CB16D910060C88D /* BankUp */ = {
 			isa = PBXGroup;
 			children = (
+				931A22872CB32E250060C88D /* Utils */,
+				931A22862CB327370060C88D /* Home */,
 				931A227C2CB2EDA40060C88D /* Onboarding */,
 				931A22772CB16E190060C88D /* Login */,
 				931A22762CB16D980060C88D /* Files */,
@@ -89,6 +98,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		931A22872CB32E250060C88D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				931A22882CB32E3C0060C88D /* LocalState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +123,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				931A22772CB16E190060C88D /* Login */,
+				931A22862CB327370060C88D /* Home */,
 			);
 			name = BankUp;
 			packageProductDependencies = (
@@ -165,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931A22892CB32E3C0060C88D /* LocalState.swift in Sources */,
 				931A22712CB16D910060C88D /* AppDelegate.swift in Sources */,
 				931A22802CB30A990060C88D /* OnboardingViewController.swift in Sources */,
 				931A227E2CB2EDD90060C88D /* OnboardingContainerViewController.swift in Sources */,
