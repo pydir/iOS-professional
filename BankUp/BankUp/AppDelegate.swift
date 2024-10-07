@@ -16,20 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
-    let homeViewController = HomeViewController()
-    
     let mainViewController = MainViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = loginViewController
         
-        loginViewController.delegate                = self
-        onboardingContainerViewController.delegate  = self
-        homeViewController.delegate                 = self
-//        window?.rootViewController = OnboardingContainerViewController()
+//        let vc = mainViewController
+        loginViewController.delegate = self
+        let vc = loginViewController
+        vc.setStatusBar()
+        
+        UINavigationBar.appearance().isTranslucent   = false
+        UINavigationBar.appearance().backgroundColor = appColor
+        
+        window?.rootViewController = vc
         return true
     }
 }
@@ -37,8 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         if LocalState.hasOnboarded {
-            setRootViewController(homeViewController)
-//            setRootViewController(mainViewController)
+            setRootViewController(mainViewController)
             return
         }
         setRootViewController(onboardingContainerViewController)
@@ -48,7 +49,7 @@ extension AppDelegate: LoginViewControllerDelegate {
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
-        setRootViewController(homeViewController)
+        setRootViewController(mainViewController)
     }
 }
 
