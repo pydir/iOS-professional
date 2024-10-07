@@ -20,6 +20,8 @@
 		93565A712CB3BAA70097AA4E /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93565A702CB3BAA70097AA4E /* UIViewController+Utils.swift */; };
 		93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93565A722CB3BC130097AA4E /* MainViewController.swift */; };
 		938B55C22CB3E774008E6C2E /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B55C12CB3E774008E6C2E /* AccountSummaryCell.swift */; };
+		938B55CB2CB40566008E6C2E /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B55CA2CB40566008E6C2E /* CurrencyFormatter.swift */; };
+		938B55CD2CB40D89008E6C2E /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B55CC2CB40D89008E6C2E /* Decimal+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		93565A702CB3BAA70097AA4E /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		93565A722CB3BC130097AA4E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		938B55C12CB3E774008E6C2E /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
+		938B55CA2CB40566008E6C2E /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		938B55CC2CB40D89008E6C2E /* Decimal+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -138,6 +142,8 @@
 			children = (
 				931A22882CB32E3C0060C88D /* LocalState.swift */,
 				93565A702CB3BAA70097AA4E /* UIViewController+Utils.swift */,
+				938B55CA2CB40566008E6C2E /* CurrencyFormatter.swift */,
+				938B55CC2CB40D89008E6C2E /* Decimal+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -246,6 +252,8 @@
 				93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */,
 				93010F832CB3CF5100F9E22C /* AccountSummaryViewController.swift in Sources */,
 				931A22802CB30A990060C88D /* OnboardingViewController.swift in Sources */,
+				938B55CD2CB40D89008E6C2E /* Decimal+Utils.swift in Sources */,
+				938B55CB2CB40566008E6C2E /* CurrencyFormatter.swift in Sources */,
 				931A227E2CB2EDD90060C88D /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
