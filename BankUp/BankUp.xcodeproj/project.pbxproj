@@ -50,11 +50,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		931A22862CB327370060C88D /* Home */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Home;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +106,6 @@
 				931A227C2CB2EDA40060C88D /* Onboarding */,
 				93010F812CB3CF2B00F9E22C /* AccountSummary */,
 				931A22872CB32E250060C88D /* Utils */,
-				931A22862CB327370060C88D /* Home */,
 				931A22762CB16D980060C88D /* Files */,
 				93565A722CB3BC130097AA4E /* MainViewController.swift */,
 			);
@@ -182,7 +176,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				931A22772CB16E190060C88D /* Login */,
-				931A22862CB327370060C88D /* Home */,
 			);
 			name = BankUp;
 			packageProductDependencies = (
