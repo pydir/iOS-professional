@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93010F802CB3C69800F9E22C /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93010F7F2CB3C69800F9E22C /* ProfileManager.swift */; };
+		93010F832CB3CF5100F9E22C /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93010F822CB3CF5100F9E22C /* AccountSummaryViewController.swift */; };
 		931A22712CB16D910060C88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A226A2CB16D910060C88D /* AppDelegate.swift */; };
 		931A22732CB16D910060C88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931A226B2CB16D910060C88D /* Assets.xcassets */; };
 		931A22752CB16D910060C88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931A226E2CB16D910060C88D /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		93010F7F2CB3C69800F9E22C /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		93010F822CB3CF5100F9E22C /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		931A22512CB165FF0060C88D /* BankUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		931A226A2CB16D910060C88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		931A226B2CB16D910060C88D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		93010F812CB3CF2B00F9E22C /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				93010F822CB3CF5100F9E22C /* AccountSummaryViewController.swift */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
 		931A22482CB165FF0060C88D = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 				931A226A2CB16D910060C88D /* AppDelegate.swift */,
 				931A22772CB16E190060C88D /* Login */,
 				931A227C2CB2EDA40060C88D /* Onboarding */,
+				93010F812CB3CF2B00F9E22C /* AccountSummary */,
 				931A22872CB32E250060C88D /* Utils */,
 				931A22862CB327370060C88D /* Home */,
 				931A22762CB16D980060C88D /* Files */,
@@ -205,6 +216,7 @@
 				931A22892CB32E3C0060C88D /* LocalState.swift in Sources */,
 				931A22712CB16D910060C88D /* AppDelegate.swift in Sources */,
 				93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */,
+				93010F832CB3CF5100F9E22C /* AccountSummaryViewController.swift in Sources */,
 				931A22802CB30A990060C88D /* OnboardingViewController.swift in Sources */,
 				931A227E2CB2EDD90060C88D /* OnboardingContainerViewController.swift in Sources */,
 			);

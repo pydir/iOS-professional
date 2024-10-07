@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = loginViewController
+        window?.rootViewController = /*loginViewController*/ AccountSummaryViewController()
         
         loginViewController.delegate                = self
         onboardingContainerViewController.delegate  = self
@@ -37,8 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         if LocalState.hasOnboarded {
-//            setRootViewController(homeViewController)
-            setRootViewController(mainViewController)
+            setRootViewController(homeViewController)
             return
         }
         setRootViewController(onboardingContainerViewController)
