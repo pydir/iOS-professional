@@ -18,6 +18,7 @@ protocol LoginViewControllerDelegate {
 }
 
 class LoginViewController: UIViewController {
+    
     let appNameLabel    = UILabel()
     let appSloganLabel  = UILabel()
     let loginView       = LoginView()
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
+        errorLabel.isHidden = true
     }
 }
 
@@ -119,6 +121,7 @@ extension LoginViewController {
 // MARK: - Actions
 extension LoginViewController {
     @objc func signInTapped(_ sender: UIButton) {
+        view.endEditing(true)
         login()
     }
     

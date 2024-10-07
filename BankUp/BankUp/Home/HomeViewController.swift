@@ -29,7 +29,7 @@ extension HomeViewController {
         stackView.spacing   = 20
         
         label.translatesAutoresizingMaskIntoConstraints     = false
-        label.text          = "Hello"
+        label.text          = "Welcome to BankUp!"
         label.font          = UIFont.preferredFont(forTextStyle: .title1)
         
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
