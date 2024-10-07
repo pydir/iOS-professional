@@ -18,15 +18,69 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="370" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wQ5-Y4-3CL">
+                    <rect key="frame" x="15" y="15" width="340" height="114"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-Ze-R81">
+                            <rect key="frame" x="0.0" y="0.0" width="236" height="114"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="BankUp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-Tv-GdT">
+                                    <rect key="frame" x="0.0" y="0.0" width="236" height="32.333333333333336"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good morning," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkg-Ja-ylO">
+                                    <rect key="frame" x="0.0" y="40.333333333333336" width="236" height="20.333333333333336"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-9Z-K40">
+                                    <rect key="frame" x="0.0" y="68.666666666666671" width="236" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqB-mX-QDS">
+                                    <rect key="frame" x="0.0" y="97" width="236" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="plK-ku-322">
+                            <rect key="frame" x="240" y="0.0" width="100" height="100"/>
+                            <color key="tintColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Z46-mN-Za6"/>
+                                <constraint firstAttribute="width" constant="100" id="aYI-wm-Z7f"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wQ5-Y4-3CL" secondAttribute="bottom" priority="999" constant="15" id="YRh-JG-PrU"/>
+                <constraint firstItem="wQ5-Y4-3CL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="hZ5-XQ-Aj6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wQ5-Y4-3CL" secondAttribute="trailing" priority="999" constant="15" id="lg6-D0-ou2"/>
+                <constraint firstItem="wQ5-Y4-3CL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="oRY-D9-F57"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="83" y="29"/>
+            <point key="canvasLocation" x="82.44274809160305" y="28.87323943661972"/>
         </view>
     </objects>
     <resources>
+        <image name="sun.max.fill" catalog="system" width="128" height="125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
