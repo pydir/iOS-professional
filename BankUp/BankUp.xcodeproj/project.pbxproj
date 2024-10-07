@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93010F802CB3C69800F9E22C /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93010F7F2CB3C69800F9E22C /* ProfileManager.swift */; };
 		931A22712CB16D910060C88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A226A2CB16D910060C88D /* AppDelegate.swift */; };
 		931A22732CB16D910060C88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931A226B2CB16D910060C88D /* Assets.xcassets */; };
 		931A22752CB16D910060C88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931A226E2CB16D910060C88D /* LaunchScreen.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93010F7F2CB3C69800F9E22C /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		931A22512CB165FF0060C88D /* BankUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		931A226A2CB16D910060C88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		931A226B2CB16D910060C88D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93010F7E2CB3C68700F9E22C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				93010F7F2CB3C69800F9E22C /* ProfileManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		931A22482CB165FF0060C88D = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		931A22702CB16D910060C88D /* BankUp */ = {
 			isa = PBXGroup;
 			children = (
+				93010F7E2CB3C68700F9E22C /* Networking */,
 				931A226A2CB16D910060C88D /* AppDelegate.swift */,
 				931A22772CB16E190060C88D /* Login */,
 				931A227C2CB2EDA40060C88D /* Onboarding */,
@@ -190,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93565A712CB3BAA70097AA4E /* UIViewController+Utils.swift in Sources */,
+				93010F802CB3C69800F9E22C /* ProfileManager.swift in Sources */,
 				931A22892CB32E3C0060C88D /* LocalState.swift in Sources */,
 				931A22712CB16D910060C88D /* AppDelegate.swift in Sources */,
 				93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */,

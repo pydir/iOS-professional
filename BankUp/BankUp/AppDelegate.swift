@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         if LocalState.hasOnboarded {
-            setRootViewController(homeViewController)
-//            setRootViewController(mainViewController)
+//            setRootViewController(homeViewController)
+            setRootViewController(mainViewController)
             return
         }
         setRootViewController(onboardingContainerViewController)
