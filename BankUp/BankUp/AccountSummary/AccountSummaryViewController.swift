@@ -9,6 +9,12 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+        barButtonItem.tintColor = .label
+        return barButtonItem
+    }()
+    
     struct Profile {
         let firstName: String
         let lastName: String
@@ -22,6 +28,11 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
@@ -88,6 +99,13 @@ extension AccountSummaryViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Actions
+extension AccountSummaryViewController {
+    @objc func logoutTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .Logout, object: nil)
+    }
+}
+
 
 extension AccountSummaryViewController {
     private func fetchData() {
@@ -109,7 +127,6 @@ extension AccountSummaryViewController {
         let investment2 = AccountSummaryCell.ViewModel(accountType: .Investment,
                                                        accountName: "Growth Fund",
                                                        balance: 15000.00)
-        
         accounts.append(savings)
         accounts.append(chequing)
         accounts.append(visa)
