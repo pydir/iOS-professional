@@ -24,6 +24,7 @@
 		938B55C22CB3E774008E6C2E /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B55C12CB3E774008E6C2E /* AccountSummaryCell.swift */; };
 		938B55CB2CB40566008E6C2E /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B55CA2CB40566008E6C2E /* CurrencyFormatter.swift */; };
 		938B55CD2CB40D89008E6C2E /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B55CC2CB40D89008E6C2E /* Decimal+Utils.swift */; };
+		93C826DE2CB6A61D001C4901 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */; };
 		93E2F3BE2CB54D54007E8A20 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E2F3BD2CB54D54007E8A20 /* ShakeyBellView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		938B55CA2CB40566008E6C2E /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		938B55CC2CB40D89008E6C2E /* Decimal+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Utils.swift"; sourceTree = "<group>"; };
 		938B55D22CB447D4008E6C2E /* BankUpUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankUpUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		93E2F3BD2CB54D54007E8A20 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				93565A702CB3BAA70097AA4E /* UIViewController+Utils.swift */,
 				938B55CC2CB40D89008E6C2E /* Decimal+Utils.swift */,
 				9387197D2CB46658001D4825 /* UITextField+SecureToggle.swift */,
+				93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */,
 				931A22882CB32E3C0060C88D /* LocalState.swift */,
 				938B55CA2CB40566008E6C2E /* CurrencyFormatter.swift */,
 				9387197B2CB4619C001D4825 /* NSNotificationName.swift */,
@@ -324,6 +327,7 @@
 				931A22712CB16D910060C88D /* AppDelegate.swift in Sources */,
 				93E2F3BE2CB54D54007E8A20 /* ShakeyBellView.swift in Sources */,
 				93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */,
+				93C826DE2CB6A61D001C4901 /* Date+Extensions.swift in Sources */,
 				93010F832CB3CF5100F9E22C /* AccountSummaryViewController.swift in Sources */,
 				931A22802CB30A990060C88D /* OnboardingViewController.swift in Sources */,
 				938B55CD2CB40D89008E6C2E /* Decimal+Utils.swift in Sources */,
