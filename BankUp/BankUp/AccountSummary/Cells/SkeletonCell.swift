@@ -26,6 +26,7 @@ class SkeletonCell: UITableViewCell {
     let nameLayer           = CAGradientLayer()
     let balanceLayer        = CAGradientLayer()
     let balanceAmountLayer  = CAGradientLayer()
+    let underlineViewLayer  = CAGradientLayer()
     
     static let reuseID      = "SkeletonCell"
     static let rowHeight    = 112
@@ -45,23 +46,26 @@ class SkeletonCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        typeLayer.frame                 = typeLabel.bounds
-        typeLayer.cornerRadius          = typeLabel.bounds.height / 2
+        typeLayer.frame                   = typeLabel.bounds
+        typeLayer.cornerRadius            = typeLabel.bounds.height / 2
         
-        nameLayer.frame                 = nameLabel.bounds
-        nameLayer.cornerRadius          = nameLabel.bounds.height / 2
+        underlineViewLayer.frame          = underlineView.bounds
         
-        balanceLayer.frame              = balanceLabel.bounds
-        balanceLayer.cornerRadius       = balanceLabel.bounds.height / 2
+        nameLayer.frame                   = nameLabel.bounds
+        nameLayer.cornerRadius            = nameLabel.bounds.height / 2
         
-        balanceAmountLayer.frame        = balanceAmountLabel.bounds
-        balanceAmountLayer.cornerRadius = balanceAmountLabel.bounds.height / 2
+        balanceLayer.frame                = balanceLabel.bounds
+        balanceLayer.cornerRadius         = balanceLabel.bounds.height / 2
+        
+        balanceAmountLayer.frame          = balanceAmountLabel.bounds
+        balanceAmountLayer.cornerRadius   = balanceAmountLabel.bounds.height / 2
     }
     
     private func setup() {
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         typeLabel.adjustsFontForContentSizeCategory = true
+        typeLabel.text = "-Account-"
         
         underlineView.translatesAutoresizingMaskIntoConstraints = false
         underlineView.backgroundColor = appColor
@@ -69,7 +73,7 @@ class SkeletonCell: UITableViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         nameLabel.adjustsFontForContentSizeCategory = true
-        nameLabel.text = ""
+        nameLabel.text = "-Account Name-"
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
         balanceStackView.axis = .vertical
@@ -98,6 +102,10 @@ class SkeletonCell: UITableViewCell {
         nameLayer.startPoint            = CGPoint(x: 0, y: 0.5)
         nameLayer.endPoint              = CGPoint(x: 1, y: 0.5)
         nameLabel.layer.addSublayer(nameLayer)
+
+        underlineViewLayer.startPoint            = CGPoint(x: 0, y: 0.5)
+        underlineViewLayer.endPoint              = CGPoint(x: 1, y: 0.5)
+        underlineView.layer.addSublayer(underlineViewLayer)
         
         balanceLayer.startPoint         = CGPoint(x: 0, y: 0.5)
         balanceLayer.endPoint           = CGPoint(x: 1, y: 0.5)
@@ -113,7 +121,10 @@ class SkeletonCell: UITableViewCell {
         typeGroup.beginTime = 0.0
         typeLayer.add(typeGroup, forKey: "backgroundColor")
         
-        let nameGroup = makeAnimationGroup(previousGroup: typeGroup)
+        let underlineViewGroup = makeAnimationGroup(previousGroup: typeGroup)
+        underlineViewLayer.add(underlineViewGroup, forKey: "backgroundColor")
+        
+        let nameGroup = makeAnimationGroup(previousGroup: underlineViewGroup)
         nameLayer.add(nameGroup, forKey: "backgroundColor")
         
         let balanceGroup = makeAnimationGroup(previousGroup: nameGroup)
