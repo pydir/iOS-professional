@@ -26,6 +26,8 @@
 		939918502CB6D37D004B3A87 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399184E2CB6D37D004B3A87 /* CurrencyFormatterTests.swift */; };
 		939918542CB6D3AA004B3A87 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918532CB6D3AA004B3A87 /* ProfileTests.swift */; };
 		939918562CB6D4F8004B3A87 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918552CB6D4F8004B3A87 /* AccountTests.swift */; };
+		939918582CB6E6EE004B3A87 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918572CB6E6EE004B3A87 /* SkeletonLoadable.swift */; };
+		9399185A2CB6E915004B3A87 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918592CB6E915004B3A87 /* SkeletonCell.swift */; };
 		93C826DE2CB6A61D001C4901 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */; };
 		93C826E02CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C826DF2CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift */; };
 		93E2F3BE2CB54D54007E8A20 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E2F3BD2CB54D54007E8A20 /* ShakeyBellView.swift */; };
@@ -64,6 +66,8 @@
 		9399184E2CB6D37D004B3A87 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		939918532CB6D3AA004B3A87 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
 		939918552CB6D4F8004B3A87 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
+		939918572CB6E6EE004B3A87 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		939918592CB6E915004B3A87 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		93C826DF2CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		93E2F3BD2CB54D54007E8A20 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				938B55C12CB3E774008E6C2E /* AccountSummaryCell.swift */,
+				939918572CB6E6EE004B3A87 /* SkeletonLoadable.swift */,
+				939918592CB6E915004B3A87 /* SkeletonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -343,6 +349,8 @@
 				931A22712CB16D910060C88D /* AppDelegate.swift in Sources */,
 				93E2F3BE2CB54D54007E8A20 /* ShakeyBellView.swift in Sources */,
 				93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */,
+				9399185A2CB6E915004B3A87 /* SkeletonCell.swift in Sources */,
+				939918582CB6E6EE004B3A87 /* SkeletonLoadable.swift in Sources */,
 				93C826DE2CB6A61D001C4901 /* Date+Extensions.swift in Sources */,
 				93010F832CB3CF5100F9E22C /* AccountSummaryViewController.swift in Sources */,
 				931A22802CB30A990060C88D /* OnboardingViewController.swift in Sources */,
