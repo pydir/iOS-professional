@@ -70,9 +70,9 @@ class AccountSummaryHeaderView: UIView {
     }
     
     func configure(viewModel: ViewModel) {
-        welcomeLabel.text   = viewModel.welcomeMessage
-        nameLabel.text      = viewModel.name
-        dateLabel.text      = viewModel.dateFormatted
+        self.welcomeLabel.text   = viewModel.welcomeMessage
+        self.nameLabel.text      = viewModel.name
+        self.dateLabel.text      = viewModel.dateFormatted
     }
     
 }
