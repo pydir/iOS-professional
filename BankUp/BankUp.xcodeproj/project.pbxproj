@@ -28,6 +28,8 @@
 		939918562CB6D4F8004B3A87 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918552CB6D4F8004B3A87 /* AccountTests.swift */; };
 		939918582CB6E6EE004B3A87 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918572CB6E6EE004B3A87 /* SkeletonLoadable.swift */; };
 		9399185A2CB6E915004B3A87 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939918592CB6E915004B3A87 /* SkeletonCell.swift */; };
+		9399185D2CB706DC004B3A87 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399185C2CB706DC004B3A87 /* ProfileManager.swift */; };
+		9399185F2CB70946004B3A87 /* AccountSummaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399185E2CB70946004B3A87 /* AccountSummaryViewControllerTests.swift */; };
 		93C826DE2CB6A61D001C4901 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */; };
 		93C826E02CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C826DF2CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift */; };
 		93E2F3BE2CB54D54007E8A20 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E2F3BD2CB54D54007E8A20 /* ShakeyBellView.swift */; };
@@ -68,6 +70,8 @@
 		939918552CB6D4F8004B3A87 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		939918572CB6E6EE004B3A87 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		939918592CB6E915004B3A87 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		9399185C2CB706DC004B3A87 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		9399185E2CB70946004B3A87 /* AccountSummaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerTests.swift; sourceTree = "<group>"; };
 		93C826DD2CB6A61D001C4901 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		93C826DF2CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		93E2F3BD2CB54D54007E8A20 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			children = (
 				93010F822CB3CF5100F9E22C /* AccountSummaryViewController.swift */,
 				93C826DF2CB6A7F4001C4901 /* AccountSummaryViewController+Networking.swift */,
+				9399185B2CB706C1004B3A87 /* Networking */,
 				938B55BF2CB3E739008E6C2E /* Header */,
 				938B55C02CB3E74D008E6C2E /* Cells */,
 			);
@@ -216,9 +221,18 @@
 			isa = PBXGroup;
 			children = (
 				939918532CB6D3AA004B3A87 /* ProfileTests.swift */,
+				9399185E2CB70946004B3A87 /* AccountSummaryViewControllerTests.swift */,
 				939918552CB6D4F8004B3A87 /* AccountTests.swift */,
 			);
 			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		9399185B2CB706C1004B3A87 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9399185C2CB706DC004B3A87 /* ProfileManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		93E2F3BC2CB54D2A007E8A20 /* Components */ = {
@@ -349,6 +363,7 @@
 				931A22712CB16D910060C88D /* AppDelegate.swift in Sources */,
 				93E2F3BE2CB54D54007E8A20 /* ShakeyBellView.swift in Sources */,
 				93565A732CB3BC130097AA4E /* MainViewController.swift in Sources */,
+				9399185D2CB706DC004B3A87 /* ProfileManager.swift in Sources */,
 				9399185A2CB6E915004B3A87 /* SkeletonCell.swift in Sources */,
 				939918582CB6E6EE004B3A87 /* SkeletonLoadable.swift in Sources */,
 				93C826DE2CB6A61D001C4901 /* Date+Extensions.swift in Sources */,
@@ -367,6 +382,7 @@
 				939918502CB6D37D004B3A87 /* CurrencyFormatterTests.swift in Sources */,
 				939918562CB6D4F8004B3A87 /* AccountTests.swift in Sources */,
 				939918542CB6D3AA004B3A87 /* ProfileTests.swift in Sources */,
+				9399185F2CB70946004B3A87 /* AccountSummaryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

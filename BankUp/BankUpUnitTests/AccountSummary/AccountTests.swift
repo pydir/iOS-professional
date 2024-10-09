@@ -50,8 +50,6 @@ class AccountTests: XCTestCase {
         dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         
-        let dateAsString = "2010-06-21T15:29:32Z"
-        
         XCTAssertEqual(accounts.count, 2)
         
         XCTAssertEqual(accounts[1].id, "2")
