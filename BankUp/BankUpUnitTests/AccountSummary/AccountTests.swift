@@ -51,7 +51,6 @@ class AccountTests: XCTestCase {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         
         let dateAsString = "2010-06-21T15:29:32Z"
-        let dateString = dateFormatter.date(from: dateAsString)!
         
         XCTAssertEqual(accounts.count, 2)
         
