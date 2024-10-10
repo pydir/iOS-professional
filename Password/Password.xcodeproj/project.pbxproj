@@ -10,7 +10,8 @@
 		931194882CB7F50E005F7018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931194822CB7F50E005F7018 /* Assets.xcassets */; };
 		9311948A2CB7F50E005F7018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931194852CB7F50E005F7018 /* LaunchScreen.storyboard */; };
 		9311948B2CB7F50E005F7018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931194812CB7F50E005F7018 /* AppDelegate.swift */; };
-		9311948C2CB7F50E005F7018 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931194862CB7F50E005F7018 /* ViewController.swift */; };
+		9311948C2CB7F50E005F7018 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931194862CB7F50E005F7018 /* PasswordResetViewController.swift */; };
+		931194902CB80AB9005F7018 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311948F2CB80AB9005F7018 /* PasswordResetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,7 +20,8 @@
 		931194822CB7F50E005F7018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		931194832CB7F50E005F7018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		931194842CB7F50E005F7018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		931194862CB7F50E005F7018 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		931194862CB7F50E005F7018 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		9311948F2CB80AB9005F7018 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,7 @@
 			children = (
 				9311948D2CB7F67C005F7018 /* Files */,
 				931194812CB7F50E005F7018 /* AppDelegate.swift */,
-				931194862CB7F50E005F7018 /* ViewController.swift */,
+				9311948E2CB80A84005F7018 /* PasswordResetView */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -67,6 +69,15 @@
 				931194832CB7F50E005F7018 /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		9311948E2CB80A84005F7018 /* PasswordResetView */ = {
+			isa = PBXGroup;
+			children = (
+				9311948F2CB80AB9005F7018 /* PasswordResetView.swift */,
+				931194862CB7F50E005F7018 /* PasswordResetViewController.swift */,
+			);
+			path = PasswordResetView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931194902CB80AB9005F7018 /* PasswordResetView.swift in Sources */,
 				9311948B2CB7F50E005F7018 /* AppDelegate.swift in Sources */,
-				9311948C2CB7F50E005F7018 /* ViewController.swift in Sources */,
+				9311948C2CB7F50E005F7018 /* PasswordResetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
