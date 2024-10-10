@@ -12,6 +12,7 @@
 		9311948B2CB7F50E005F7018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931194812CB7F50E005F7018 /* AppDelegate.swift */; };
 		9311948C2CB7F50E005F7018 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931194862CB7F50E005F7018 /* PasswordResetViewController.swift */; };
 		931194902CB80AB9005F7018 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9311948F2CB80AB9005F7018 /* PasswordResetView.swift */; };
+		931194952CB82316005F7018 /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931194942CB82316005F7018 /* PasswordCriteriaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		931194842CB7F50E005F7018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		931194862CB7F50E005F7018 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		9311948F2CB80AB9005F7018 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		931194942CB82316005F7018 /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		931194872CB7F50E005F7018 /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				931194932CB82306005F7018 /* PasswordStatusView */,
 				9311948D2CB7F67C005F7018 /* Files */,
 				931194812CB7F50E005F7018 /* AppDelegate.swift */,
 				9311948E2CB80A84005F7018 /* PasswordResetView */,
@@ -78,6 +81,14 @@
 				931194862CB7F50E005F7018 /* PasswordResetViewController.swift */,
 			);
 			path = PasswordResetView;
+			sourceTree = "<group>";
+		};
+		931194932CB82306005F7018 /* PasswordStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				931194942CB82316005F7018 /* PasswordCriteriaView.swift */,
+			);
+			path = PasswordStatusView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 			files = (
 				931194902CB80AB9005F7018 /* PasswordResetView.swift in Sources */,
 				9311948B2CB7F50E005F7018 /* AppDelegate.swift in Sources */,
+				931194952CB82316005F7018 /* PasswordCriteriaView.swift in Sources */,
 				9311948C2CB7F50E005F7018 /* PasswordResetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
