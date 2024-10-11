@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol PasswordTextFieldDelegate {
+    func editingChanged(_ sender: PasswordTextField)
+}
+
 class PasswordTextField: UIView {
     let lockImageView       = UIImageView()
     let passwordTextField   = UITextField()
@@ -15,6 +19,8 @@ class PasswordTextField: UIView {
     let dividerView         = UIView()
     let errorLabel          = UILabel()
     let placeHolderText: String
+    
+    var delegate: PasswordTextFieldDelegate?
     
     init(placeHolderText: String) {
         self.placeHolderText = placeHolderText
@@ -47,6 +53,8 @@ extension PasswordTextField {
         passwordTextField.isSecureTextEntry = true
         passwordTextField.keyboardType      = .asciiCapable
         passwordTextField.placeholder       = placeHolderText
+        passwordTextField.delegate          = self
+        passwordTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         
         toggleButton.translatesAutoresizingMaskIntoConstraints      = false
         toggleButton.addTarget(self, action: #selector(handleToggleButtonAction(_:forEvent:)), for: [.touchDown, .touchUpInside, .touchUpOutside])
@@ -68,7 +76,7 @@ extension PasswordTextField {
         errorLabel.textColor = .systemRed
         errorLabel.numberOfLines = 0
         errorLabel.lineBreakMode = .byWordWrapping
-//        errorLabel.isHidden      = true
+        errorLabel.isHidden      = true
     }
     
     func layout() {
@@ -140,5 +148,16 @@ extension PasswordTextField {
     @objc func toggleButtonTouchDown(_ sender: UIButton) {
         passwordTextField.isSecureTextEntry.toggle()
         toggleButton.setImage(UIImage(systemName: "eye.slash.fill"), for: [])
+    }
+    
+    @objc private func textFieldEditingChanged(_ sender: UITextField) {
+        self.delegate?.editingChanged(self)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension PasswordTextField: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
 }

@@ -8,8 +8,9 @@
 import UIKit
 
 class PasswordResetViewController: UIViewController {
-    let passwordResetView           = PasswordTextField(placeHolderText: "New password")
-    let confirmPasswordResetView    = PasswordTextField(placeHolderText: "Re-enter new password")
+    let passwordTextField           = PasswordTextField(placeHolderText: "New password")
+    let confirmPasswordTextField    = PasswordTextField(placeHolderText: "Re-enter new password")
+    
     let stackView           = UIStackView()
     let statusView          = PasswordStatusView()
     let resetButton         = UIButton(type: .custom)
@@ -24,7 +25,8 @@ class PasswordResetViewController: UIViewController {
 
 extension PasswordResetViewController {
     private func style() {
-        passwordResetView.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.delegate = self
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis    = .vertical
@@ -32,7 +34,8 @@ extension PasswordResetViewController {
     
         statusView.translatesAutoresizingMaskIntoConstraints                = false
 
-        confirmPasswordResetView.translatesAutoresizingMaskIntoConstraints  = false
+        confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints  = false
+        confirmPasswordTextField.delegate = self
         
         resetButton.translatesAutoresizingMaskIntoConstraints               = false
         resetButton.configuration = .filled()
@@ -41,9 +44,9 @@ extension PasswordResetViewController {
     }
     
     private func layout() {
-        stackView.addArrangedSubview(passwordResetView)
+        stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(statusView)
-        stackView.addArrangedSubview(confirmPasswordResetView)
+        stackView.addArrangedSubview(confirmPasswordTextField)
         stackView.addArrangedSubview(resetButton)
 
         view.addSubview(stackView)
@@ -59,6 +62,16 @@ extension PasswordResetViewController {
 // MARK: - Actions
 extension PasswordResetViewController {
     @objc private func resetPasswordButtonTapped(_ sender: UIButton) {
+        
+    }
+}
+
+// MARK: - PasswordTextFieldDelegate
+extension PasswordResetViewController: PasswordTextFieldDelegate {
+    func editingChanged(_ sender: PasswordTextField) {
+        if sender === passwordTextField {
+            statusView.updateDisplay(sender.passwordTextField.text ?? "")
+        }
         
     }
 }
