@@ -65,7 +65,6 @@ extension PasswordCriteriaView {
         label.translatesAutoresizingMaskIntoConstraints     = false
         label.font      = UIFont.preferredFont(forTextStyle: .subheadline)
         label.textColor = .secondaryLabel
-        label.text      = "uppercase letter (A-Z)"
         
         // Content Hugging Priotry
         imageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)

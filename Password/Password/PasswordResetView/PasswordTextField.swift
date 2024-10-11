@@ -8,15 +8,18 @@
 import Foundation
 import UIKit
 
-class PasswordResetView: UIView {
+class PasswordTextField: UIView {
     let lockImageView       = UIImageView()
     let passwordTextField   = UITextField()
     let toggleButton        = UIButton(type: .custom)
     let dividerView         = UIView()
     let errorLabel          = UILabel()
+    let placeHolderText: String
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(placeHolderText: String) {
+        self.placeHolderText = placeHolderText
+        
+        super.init(frame: .zero)
         
         style()
         layout()
@@ -32,24 +35,24 @@ class PasswordResetView: UIView {
     
 }
 
-extension PasswordResetView {
+extension PasswordTextField {
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemBackground
         
         lockImageView.translatesAutoresizingMaskIntoConstraints     = false
         let lockImage = UIImage(systemName: "lock.fill")
         lockImageView.image = lockImage
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholder       = "Password"
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.keyboardType      = .asciiCapable
+        passwordTextField.placeholder       = placeHolderText
         
         toggleButton.translatesAutoresizingMaskIntoConstraints      = false
         toggleButton.addTarget(self, action: #selector(handleToggleButtonAction(_:forEvent:)), for: [.touchDown, .touchUpInside, .touchUpOutside])
         let visibleEyeImage = UIImage(systemName: "eye.fill")
         toggleButton.setImage(visibleEyeImage, for: [])
-
+        
         
         // content compression fix
         toggleButton.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
@@ -60,11 +63,12 @@ extension PasswordResetView {
         dividerView.backgroundColor = .separator
         
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel.text = "Enter your password and again and again and again and again and again"
+        errorLabel.text = "Your password must meet requires below"
         errorLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         errorLabel.textColor = .systemRed
         errorLabel.numberOfLines = 0
         errorLabel.lineBreakMode = .byWordWrapping
+//        errorLabel.isHidden      = true
     }
     
     func layout() {
@@ -83,9 +87,8 @@ extension PasswordResetView {
         // passwordTextField
         NSLayoutConstraint.activate([
             passwordTextField.topAnchor.constraint(equalTo: topAnchor),
-            passwordTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: lockImageView.trailingAnchor, multiplier: 1),
+            passwordTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: lockImageView.trailingAnchor, multiplier: 1)
         ])
-        
         // toggleButton
         NSLayoutConstraint.activate([
             toggleButton.centerYAnchor.constraint(equalTo: passwordTextField.centerYAnchor),
@@ -108,13 +111,13 @@ extension PasswordResetView {
             errorLabel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 4)
         ])
         
-//
+
     }
 }
 
 
 // MARK: - Actions
-extension PasswordResetView {
+extension PasswordTextField {
     
     @objc func handleToggleButtonAction(_ sender: UIButton, forEvent event: UIEvent) {
         if let touch = event.allTouches?.first {
