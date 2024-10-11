@@ -10,17 +10,27 @@ import UIKit
 
 protocol PasswordTextFieldDelegate {
     func editingChanged(_ sender: PasswordTextField)
+    func editingDidEnd(_ sender: PasswordTextField)
 }
 
 class PasswordTextField: UIView {
+    
+    typealias CustomValidation = (_ textValue: String?) -> (Bool, String)?
+    
     let lockImageView       = UIImageView()
     let passwordTextField   = UITextField()
     let toggleButton        = UIButton(type: .custom)
     let dividerView         = UIView()
     let errorLabel          = UILabel()
-    let placeHolderText: String
     
+    let placeHolderText: String
+    var customValidation: CustomValidation?
     var delegate: PasswordTextFieldDelegate?
+    
+    var text: String? {
+        get { return passwordTextField.text }
+        set { return passwordTextField.text = newValue }
+    }
     
     init(placeHolderText: String) {
         self.placeHolderText = placeHolderText
@@ -159,5 +169,38 @@ extension PasswordTextField {
 extension PasswordTextField: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.delegate?.editingDidEnd(self)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+}
+
+// MARK: - Validation
+extension PasswordTextField {
+    func validate() -> Bool {
+        if let customValidation = customValidation,
+           let customValidationResult = customValidation(text),
+           customValidationResult.0 == false {
+            showError(customValidationResult.1)
+            return false
+        }
+        clearError()
+        return true
+    }
+    
+    private func showError(_ errorMessage: String) {
+        errorLabel.isHidden = false
+        errorLabel.text     = errorMessage
+    }
+    
+    private func clearError() {
+        errorLabel.isHidden = true
+        errorLabel.text     = ""
     }
 }

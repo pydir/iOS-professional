@@ -77,6 +77,7 @@ extension PasswordCriteriaView {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
         addSubview(stackView)
+    
         
         // Base Stack View
         NSLayoutConstraint.activate([

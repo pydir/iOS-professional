@@ -16,9 +16,9 @@ class PasswordStatusView: UIView {
     let upperCaseCriteriaView       = PasswordCriteriaView(text: "uppercase letter(A-Z")
     let lowercaseCriteriaView       = PasswordCriteriaView(text: "lowercase(a-z")
     let digitCriteriaView           = PasswordCriteriaView(text: "digit (0-9)")
-    let specialCharcterCriteriaView = PasswordCriteriaView(text: "special characters (e.g. !@#$%^")
+    let specialCharacterCriteriaView = PasswordCriteriaView(text: "special characters (e.g. !@#$%^")
     
-    private var shouldResetCriteria: Bool = true
+    var shouldResetCriteria: Bool = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,7 +54,7 @@ extension PasswordStatusView {
         upperCaseCriteriaView.translatesAutoresizingMaskIntoConstraints = false
         lowercaseCriteriaView.translatesAutoresizingMaskIntoConstraints = false
         digitCriteriaView.translatesAutoresizingMaskIntoConstraints = false
-        specialCharcterCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+        specialCharacterCriteriaView.translatesAutoresizingMaskIntoConstraints = false
         
         criteriaLabel.translatesAutoresizingMaskIntoConstraints = false
         //        criteriaLabel.text = "User at least 3 of these 3 criteria when settings your password:"
@@ -69,7 +69,7 @@ extension PasswordStatusView {
         stackView.addArrangedSubview(upperCaseCriteriaView)
         stackView.addArrangedSubview(lowercaseCriteriaView)
         stackView.addArrangedSubview(digitCriteriaView)
-        stackView.addArrangedSubview(specialCharcterCriteriaView)
+        stackView.addArrangedSubview(specialCharacterCriteriaView)
         
         addSubview(stackView)
         
@@ -82,14 +82,6 @@ extension PasswordStatusView {
             bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 2)
         ])
         
-        // Label
-        
-        NSLayoutConstraint.activate([
-            criteriaLabel.topAnchor.constraint(equalToSystemSpacingBelow: lengthCriteriaView.bottomAnchor, multiplier: 2),
-            criteriaLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: stackView.leadingAnchor, multiplier: 2),
-            trailingAnchor.constraint(equalToSystemSpacingAfter: criteriaLabel.trailingAnchor, multiplier: 2),
-            
-        ])
     }
     
     private func makeCriteriaMessage() -> NSAttributedString {
@@ -136,8 +128,39 @@ extension PasswordStatusView {
             : digitCriteriaView.reset()
             
             specialCharacterMet
-            ? specialCharcterCriteriaView.isCriteriaMet = true
-            : specialCharcterCriteriaView.reset()
+            ? specialCharacterCriteriaView.isCriteriaMet = true
+            : specialCharacterCriteriaView.reset()
+        } else {
+            lengthCriteriaView.isCriteriaMet            = lengthAndNoSpaceMet
+            upperCaseCriteriaView.isCriteriaMet         = uppercaseMet
+            lowercaseCriteriaView.isCriteriaMet         = lowercaseMet
+            digitCriteriaView.isCriteriaMet             = digitMet
+            specialCharacterCriteriaView.isCriteriaMet   = specialCharacterMet
         }
+    }
+    
+    func validate(_ text: String) -> Bool {
+        let uppercaseMet = PasswordCriteria.uppercaseMet(text)
+        let lowercaseMet = PasswordCriteria.lowercaseMet(text)
+        let digitMet     = PasswordCriteria.digitMet(text)
+        let specialCharacterMet = PasswordCriteria.specialCharacterMet(text)
+        
+        let checkable   = [uppercaseMet, lowercaseMet, digitMet, specialCharacterMet]
+        let metCriteria = checkable.filter { $0 }
+        let lengthAndNoSpaceMet = PasswordCriteria.lengthAndNoSpaceMet(text)
+        
+        if lengthAndNoSpaceMet && metCriteria.count >= 3 {
+            return true
+        }
+        
+        return false
+    }
+    
+    func reset() {
+        lengthCriteriaView.reset()
+        upperCaseCriteriaView.reset()
+        lowercaseCriteriaView.reset()
+        digitCriteriaView.reset()
+        specialCharacterCriteriaView.reset()
     }
 }
