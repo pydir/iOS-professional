@@ -18,6 +18,8 @@ class PasswordResetViewController: UIViewController {
     let stackView           = UIStackView()
     let statusView          = PasswordStatusView()
     let resetButton         = UIButton(type: .custom)
+    
+    var alert: UIAlertController?
 
     
     override func viewDidLoad() {
@@ -69,7 +71,7 @@ extension PasswordResetViewController {
     private func setupConfirmPassword() {
         let confirmPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
-                return (false, "Enter your password.")
+                return (false, "Enter your password")
             }
             
             guard text == self.passwordTextField.text else {
@@ -89,15 +91,17 @@ extension PasswordResetViewController {
     }
     
     private func style() {
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis    = .vertical
         stackView.spacing = 20
     
         statusView.translatesAutoresizingMaskIntoConstraints                = false
-
+        
+        passwordTextField.translatesAutoresizingMaskIntoConstraints         = false
+        passwordTextField.passwordTextField.returnKeyType = .next
+        
         confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints  = false
+        confirmPasswordTextField.passwordTextField.returnKeyType = .go
         
         resetButton.translatesAutoresizingMaskIntoConstraints               = false
         resetButton.configuration = .filled()
@@ -136,7 +140,9 @@ extension PasswordResetViewController {
 // MARK: - Actions
 extension PasswordResetViewController {
 
-    @objc private func resetPasswordButtonTapped(_ sender: UIButton) {
+    @objc func resetPasswordButtonTapped(_ sender: UIButton) {
+        view.endEditing(true)
+        
         let isValidPassword         = passwordTextField.validate()
         let isValidConfirmPassword  = confirmPasswordTextField.validate()
     
@@ -146,33 +152,35 @@ extension PasswordResetViewController {
     }
     
     private func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(action)
+        alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        guard let alert = alert else { return }
         
-        present(alertController, animated: true)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(action)
+        
+        present(alert, animated: true)
     }
 }
 
 // MARK: - PasswordTextFieldDelegate
 extension PasswordResetViewController: PasswordTextFieldDelegate {
-    func editingChanged(_ sender: PasswordTextField) {
+    func textFieldEditingChanged(_ sender: PasswordTextField) {
         if sender === passwordTextField {
             statusView.updateDisplay(sender.passwordTextField.text ?? "")
         }
         
     }
     
-    func editingDidEnd(_ sender: PasswordTextField) {
+    func textFieldEditingDidEnd(_ sender: PasswordTextField) {
         if sender === passwordTextField {
             statusView.shouldResetCriteria = false
             _ = passwordTextField.validate()
         } else if sender === confirmPasswordTextField {
             _ = confirmPasswordTextField.validate()
         }
+//        resetPasswordButtonTapped(resetButton.self)
     }
 }
-
 // MARK: - Keyboard
 extension PasswordResetViewController {
     
@@ -195,5 +203,18 @@ extension PasswordResetViewController {
 
     @objc private func keyboardWillHide(_ sender: NSNotification) {
         view.frame.origin.y = 0
+    }
+}
+
+// MARK: Tests
+extension PasswordResetViewController {
+    var newPasswordText: String? {
+        get { return passwordTextField.text }
+        set { passwordTextField.text = newValue }
+    }
+    
+    var confirmPasswordText: String? {
+        get { return confirmPasswordTextField.text }
+        set { confirmPasswordTextField.text = newValue }
     }
 }

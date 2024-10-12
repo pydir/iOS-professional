@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 protocol PasswordTextFieldDelegate {
-    func editingChanged(_ sender: PasswordTextField)
-    func editingDidEnd(_ sender: PasswordTextField)
+    func textFieldEditingChanged(_ sender: PasswordTextField)
+    func textFieldEditingDidEnd(_ sender: PasswordTextField)
 }
 
 class PasswordTextField: UIView {
@@ -81,7 +81,6 @@ extension PasswordTextField {
         dividerView.backgroundColor = .separator
         
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel.text = "Your password must meet requires below"
         errorLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         errorLabel.textColor = .systemRed
         errorLabel.numberOfLines = 0
@@ -161,7 +160,7 @@ extension PasswordTextField {
     }
     
     @objc private func textFieldEditingChanged(_ sender: UITextField) {
-        self.delegate?.editingChanged(self)
+        self.delegate?.textFieldEditingChanged(self)
     }
 }
 
@@ -172,12 +171,7 @@ extension PasswordTextField: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.delegate?.editingDidEnd(self)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
-        return true
+        self.delegate?.textFieldEditingDidEnd(self)
     }
 }
 
