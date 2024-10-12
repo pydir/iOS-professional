@@ -30,6 +30,14 @@
 		937128502CB9812200F2FE74 /* PasswordCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteria.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		93F93D5A2CBA4A620017278A /* Utils */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		931194662CB7F4EA005F7018 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -60,6 +68,7 @@
 		931194872CB7F50E005F7018 /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				93F93D5A2CBA4A620017278A /* Utils */,
 				931194932CB82306005F7018 /* PasswordStatusView */,
 				9311948D2CB7F67C005F7018 /* Files */,
 				931194812CB7F50E005F7018 /* AppDelegate.swift */,
@@ -111,6 +120,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				93F93D5A2CBA4A620017278A /* Utils */,
 			);
 			name = Password;
 			packageProductDependencies = (
