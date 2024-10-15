@@ -49,7 +49,7 @@ struct ContentView: View {
                                 OrderCellView(order: order)
                             }
                         }.onDelete(perform: deleteOrder)
-                    }
+                    }.accessibilityIdentifier("orderList")
                 }
             }
             .navigationDestination(for: Int.self, destination: { orderID in

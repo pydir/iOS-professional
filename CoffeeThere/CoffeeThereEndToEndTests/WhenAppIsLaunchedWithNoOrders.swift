@@ -141,7 +141,7 @@ final class when_updating_an_existing_order: XCTestCase {
         coffeeNameTextField.typeText("Hot Coffee")
         
         priceTextField.tap()
-        priceTextField.typeText("4.50")
+        priceTextField.typeText("450")
         
         // place the order
         placeOrderButton.tap()
@@ -177,6 +177,8 @@ final class when_updating_an_existing_order: XCTestCase {
         XCTAssertEqual("Hot Coffee Edit", app.staticTexts["coffeeNameText"].label)
         
     }
+    
+    // TEAR DOWN FUNCTIONS RUNS AND THEN DELETE ALL ORDERS FROM THE TEST DATABASE
     override func tearDown() {
         Task {
             guard let url = URL(string: "/test/clear-orders", relativeTo: URL(string: "https://island-bramble.glitch.me")!) else { return }
@@ -185,4 +187,3 @@ final class when_updating_an_existing_order: XCTestCase {
     }
     
 }
-
